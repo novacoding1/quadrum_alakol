@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUADRUM ALAKOL | Зона отдыха и бронирование номеров</title>
+    <meta name="description" content="Забронируйте комфортабельные номера с 3-разовым питанием в зоне отдыха QUADRUM на озере Алаколь (Акши). Семейный отдых по лучшим ценам.">
+    <!-- Google Fonts Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Стили -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Шапка сайта (Header) -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-area" onclick="showSection('visitor')">
+                <img src="images/logo.png" alt="QUADRUM Logo" class="logo-img" style="height: 48px; border-radius: 4px; object-fit: contain;">
+                <div class="logo-text">
+                    <span class="logo-title">QUADRUM</span>
+                    <span class="logo-subtitle">ALAKOL | AKSHI</span>
+                </div>
+            </a>
+            
+            <!-- Навигация для Посетителя -->
+            <nav class="visitor-nav" id="visitor-nav">
+                <ul>
+                    <li><a href="#hero-section" class="nav-link active">Главная</a></li>
+                    <li><a href="#services-section" class="nav-link">Услуги</a></li>
+                    <li><a href="#rooms-section" class="nav-link">Номера и Цены</a></li>
+                    <li><a href="#my-bookings-section" class="nav-link" onclick="openMyBookings()">Мои Бронирования</a></li>
+                    <li><a href="#contacts-section" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Кнопки переключения ролей и соцсетей -->
+            <div class="header-actions">
+                <a href="https://www.instagram.com/quadrum_alakol/" target="_blank" class="btn btn-secondary btn-icon instagram-header-btn" title="Наш Instagram" style="padding: 10px 14px; gap: 6px;">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px; color: #E1306C;">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                    <span class="btn-text" style="font-size: 13px; font-weight: 700;">Instagram</span>
+                </a>
+                <button class="btn btn-secondary btn-icon" id="role-toggle-btn" onclick="toggleRole()">
+                    <span class="btn-text" id="role-btn-text">Панель администратора</span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- РАЗДЕЛ ПОСЕТИТЕЛЯ (VISITOR SECTION) -->
+    <main class="section-container" id="visitor-section">
+        
+        <!-- Hero Секция -->
+        <section class="hero-section" id="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-tag">🌟 Уникальное лечебное озеро</div>
+                <h1 class="hero-title">Почувствуйте Силу и Уют <br><span class="highlight-text">QUADRUM ALAKOL</span></h1>
+                <p class="hero-desc">Семейная зона отдыха премиум-класса на побережье целебного озера Алаколь в поселке Акши. Стильный интерьер, комфортные современные номера, благоустроенная зеленая территория, бассейн и вкуснейшее 3-разовое домашнее питание уже включено в стоимость!</p>
+                <div class="hero-buttons">
+                    <a href="#rooms-section" class="btn btn-primary btn-large">Выбрать номер и забронировать</a>
+                    <a href="#services-section" class="btn btn-outline btn-large">Узнать об услугах</a>
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg data-name="Layer 1" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,4.75,55.05,12.72,83.93,17.11,158.07,28.3,235.17,25.9,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Секция Услуг (Services) -->
+        <section class="services-section" id="services-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Всё для Идеального Отдыха</h2>
+                    <p class="section-subtitle">Мы позаботились обо всех деталях, чтобы ваш отпуск оставил только приятные воспоминания</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Иконка Еды -->
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">3-разовое питание</h3>
+                        <p class="service-text">В стоимость каждого номера уже включен завтрак, обед и ужин. Домашняя кухня, свежие продукты, детское меню.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Иконка Волны / Пляж -->
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 2 .5 2.5 1M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 2 .5 2.5 1M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17c2.6 0 2.6 2 5 2 2.5 0 2.5-2 5-2 1.3 0 2 .5 2.5 1"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Лечебная вода</h3>
+                        <p class="service-text">Озеро Алаколь известно своей уникальной соленой водой, богатой микроэлементами. Собственный оборудованный пляж в 5 минутах ходьбы.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Иконка Бассейна / Вода -->
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22a7 7 0 0 0 5-11.97M12 22a7 7 0 0 1-5-11.97M12 2v8M12 2a10 10 0 1 0 0 20M5 5l14 14"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Комфортные Бассейны</h3>
+                        <p class="service-text">На территории зоны отдыха расположены чистые бассейны с пресной водой, комфортными шезлонгами и зонтиками для взрослых и детей.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon-box">
+                            <!-- Иконка Детская площадка -->
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="5"/>
+                                <path d="M3 21v-2a7 7 0 0 1 14 0v2"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Детские развлечения</h3>
+                        <p class="service-text">Безопасная детская площадка, настольные игры, аниматоры по выходным. До 4 лет проживание детей абсолютно бесплатно!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Номеров (Rooms & Prices Gallery) -->
+        <section class="rooms-section" id="rooms-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Уютные Номера для Любой Семьи</h2>
+                    <p class="section-subtitle">Выберите категорию проживания. Все цены указаны в сутки с включенным питанием.</p>
+                    
+                    <!-- Фильтр категорий -->
+                    <div class="filter-buttons" id="rooms-filter-container">
+                        <button class="filter-btn active" onclick="filterRooms('all')">Все номера</button>
+                        <button class="filter-btn" onclick="filterRooms('2-х местный')">2-х местные</button>
+                        <button class="filter-btn" onclick="filterRooms('3-х местный')">3-х местные</button>
+                        <button class="filter-btn" onclick="filterRooms('4-х местный')">4-х местные</button>
+                    </div>
+                </div>
+
+                <!-- Сетка номеров (генерируется JS) -->
+                <div class="rooms-grid" id="rooms-grid">
+                    <!-- Заполняется динамически из db.js / app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Раздел "Мои Бронирования" для гостя -->
+        <section class="my-bookings-section section-padding" id="my-bookings-section" style="display: none;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ваши Заявки на Бронирование</h2>
+                    <p class="section-subtitle">Здесь отображается история ваших анкет и статус их рассмотрения администратором.</p>
+                </div>
+                
+                <!-- Поиск по телефону -->
+                <div class="search-booking-box glass-panel">
+                    <h3>Найти мои бронирования</h3>
+                    <p>Введите номер телефона, который вы указывали при заполнении анкеты, чтобы увидеть статус броней:</p>
+                    <div class="search-form-row">
+                        <input type="tel" id="my-bookings-phone" placeholder="+7 (707) 123-4567" class="form-input">
+                        <button class="btn btn-primary" onclick="searchGuestBookings()">Найти</button>
+                    </div>
+                </div>
+
+                <!-- Список бронирований гостя -->
+                <div class="guest-bookings-list" id="guest-bookings-list">
+                    <div class="empty-state text-center">
+                        <p class="muted-text">Введите ваш номер телефона выше, чтобы загрузить ваши бронирования.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Контактов и Памятки (Contacts) -->
+        <section class="contacts-section" id="contacts-section">
+            <div class="container">
+                <div class="contacts-grid" style="display: block; max-width: 700px; margin: 0 auto;">
+                    <div class="contacts-info glass-panel">
+                        <h2 class="section-title text-center">Свяжитесь с Нами</h2>
+                        <p class="muted-text text-center">Мы ответим на все ваши вопросы касательно заезда, инфраструктуры и трансфера.</p>
+                        
+                        <ul class="contacts-list" style="margin-top: 24px;">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <div class="contact-details">
+                                    <span class="label">Телефон отдела бронирования:</span>
+                                    <a href="tel:+77762666692" class="val">+7 (776) 266-6692</a>
+                                </div>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon" style="color: #25D366;">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                </svg>
+                                <div class="contact-details">
+                                    <span class="label">Написать в WhatsApp:</span>
+                                    <a href="https://wa.me/77762666692" target="_blank" class="val" style="color: #25D366; text-decoration: underline;">+7 (776) 266-6692</a>
+                                </div>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon" style="color: #E1306C;">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                                <div class="contact-details">
+                                    <span class="label">Наш Instagram (фото и видео):</span>
+                                    <a href="https://www.instagram.com/quadrum_alakol/" target="_blank" class="val text-primary" style="text-decoration: underline;">@quadrum_alakol</a>
+                                </div>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon" style="color: #1877F2;">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                                <div class="contact-details">
+                                    <span class="label">Наш Facebook:</span>
+                                    <span class="val">Quadrum Alakol</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div class="contact-details">
+                                    <span class="label">Адрес зоны отдыха:</span>
+                                    <span class="val">Казахстан, Алматинская область, оз. Алаколь, п. Акши, Зона отдыха «QUADRUM»</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="rules-highlight" style="margin-top: 24px;">
+                            <h4>⚠️ Важная Памятка для Гостя:</h4>
+                            <ul>
+                                <li>🚫 В номерах **строго запрещено курить** и **употреблять крепкие спиртные напитки**. Наша зона отдыха ориентирована на здоровый семейный отдых.</li>
+                                <li>💼 Порча имущества зоны отдыха подлежит возмещению согласно прейскуранту, предъявляемому при въезде.</li>
+                                <li>👶 Проживание детей до 4 лет бесплатно (без отдельного спального места и питания). Дети от 5 до 11 лет проживают с 35% скидкой.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- РАЗДЕЛ АДМИНИСТРАТОРА (ADMIN SECTION) -->
+    <main class="section-container admin-section" id="admin-section" style="display: none;">
+        
+        <!-- Окно Авторизации (Login Gate) -->
+        <section class="admin-login-gate" id="admin-login-gate">
+            <div class="login-card glass-panel">
+                <div class="login-header">
+                    <div class="login-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h2>Панель управления QUADRUM ALAKOL</h2>
+                    <p class="muted-text">Введите пароль администратора для входа в систему</p>
+                </div>
+                <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
+                    <div class="form-group">
+                        <label for="admin-password">Пароль доступа:</label>
+                        <input type="password" id="admin-password" class="form-input" placeholder="Введите пароль..." required autocomplete="current-password">
+                        <small class="muted-text">Демо-пароль: <strong class="text-primary">admin</strong></small>
+                    </div>
+                    <div id="login-error-msg" class="error-text" style="display: none;">⚠️ Неверный пароль. Попробуйте еще раз.</div>
+                    <button type="submit" class="btn btn-primary btn-block">Войти в панель</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Панель управления (Admin Dashboard) -->
+        <section class="admin-dashboard-layout" id="admin-dashboard" style="display: none;">
+            
+            <!-- Боковое меню админа (Sidebar) -->
+            <aside class="admin-sidebar glass-panel">
+                <div class="admin-profile">
+                    <div class="avatar">А</div>
+                    <div class="profile-details">
+                        <span class="name">Администратор</span>
+                        <span class="role">Управляющий</span>
+                    </div>
+                </div>
+                
+                <nav class="admin-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="admin-menu-link active" onclick="switchAdminTab('overview')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="menu-icon">
+                                    <rect x="3" y="3" width="7" height="9"/>
+                                    <rect x="14" y="3" width="7" height="5"/>
+                                    <rect x="14" y="12" width="7" height="9"/>
+                                    <rect x="3" y="16" width="7" height="5"/>
+                                </svg>
+                                <span>Обзор панели</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="admin-menu-link" onclick="switchAdminTab('bookings')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="menu-icon">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10 9 9 9 8 9"/>
+                                </svg>
+                                <span>Анкеты гостей</span>
+                                <span class="badge" id="bookings-counter-badge">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="admin-menu-link" onclick="switchAdminTab('rooms')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="menu-icon">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                                <span>Номера гостиницы</span>
+                            </a>
+                        </li>
+                        <li class="menu-divider"></li>
+                        <li>
+                            <a href="#" class="admin-menu-link logout" onclick="handleAdminLogout()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="menu-icon">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+                                </svg>
+                                <span>Выйти</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Основной контент панели администратора -->
+            <div class="admin-main-content">
+                
+                <!-- ВКЛАДКА 1: ОБЗОР (OVERVIEW) -->
+                <div class="admin-tab-content" id="admin-tab-overview">
+                    <div class="tab-header">
+                        <h2>Обзорная панель статистики</h2>
+                        <p class="muted-text">Аналитика работы зоны отдыха QUADRUM и динамика бронирования в реальном времени.</p>
+                    </div>
+
+                    <!-- Карточки ключевых показателей -->
+                    <div class="stats-grid">
+                        <div class="stat-card glass-panel">
+                            <div class="stat-header">
+                                <span class="stat-title">Всего анкет брони</span>
+                                <div class="stat-icon-box blue">📈</div>
+                            </div>
+                            <div class="stat-value" id="stat-total-bookings">0</div>
+                            <div class="stat-desc">Подано заявок за все время</div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-header">
+                                <span class="stat-title">Новые анкеты</span>
+                                <div class="stat-icon-box orange">🛎️</div>
+                            </div>
+                            <div class="stat-value text-orange" id="stat-pending-bookings">0</div>
+                            <div class="stat-desc">Ожидают обработки администратором</div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-header">
+                                <span class="stat-title">Свободные номера</span>
+                                <div class="stat-icon-box green">🔑</div>
+                            </div>
+                            <div class="stat-value text-green" id="stat-free-rooms">0</div>
+                            <div class="stat-desc" id="stat-total-rooms-desc">из 0 номеров в фонде</div>
+                        </div>
+                        <div class="stat-card glass-panel">
+                            <div class="stat-header">
+                                <span class="stat-title">Выручка (Подтвержденные)</span>
+                                <div class="stat-icon-box gold">💵</div>
+                            </div>
+                            <div class="stat-value text-gold" id="stat-revenue">0 ₸</div>
+                            <div class="stat-desc">Сумма подтвержденных бронирований</div>
+                        </div>
+                    </div>
+
+                    <!-- Дополнительная информация и быстрый доступ -->
+                    <div class="dashboard-details-row">
+                        <div class="detailed-box glass-panel flex-2">
+                            <h3>Загрузка номерного фонда</h3>
+                            <div class="room-occupancy-wrapper">
+                                <div class="occupancy-progress-bar">
+                                    <div class="progress-fill green" id="occupancy-percent-bar" style="width: 0%;"></div>
+                                </div>
+                                <div class="occupancy-labels">
+                                    <span id="occupancy-text">Занято номеров: 0%</span>
+                                    <span id="occupancy-count">0 из 0 номеров</span>
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt-4 mb-2">Комнаты на обслуживании/уборке:</h4>
+                            <div class="cleaning-rooms-list" id="cleaning-rooms-container">
+                                <!-- Список комнат на уборке -->
+                                <p class="muted-text text-sm">В данный момент нет номеров на обслуживании.</p>
+                            </div>
+                        </div>
+
+                        <div class="detailed-box glass-panel flex-1 text-center flex-column justify-center align-center">
+                            <div class="quick-action-icon">🚀</div>
+                            <h3>Быстрое управление</h3>
+                            <p class="muted-text text-sm mb-4">Создайте новый номер для расширения фонда пансионата за 1 клик.</p>
+                            <button class="btn btn-primary" onclick="openAddRoomModal()">+ Добавить новый номер</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ВКЛАДКА 2: АНКЕТЫ ГОСТЕЙ (BOOKINGS) -->
+                <div class="admin-tab-content" id="admin-tab-bookings" style="display: none;">
+                    <div class="tab-header flex-row justify-between align-center">
+                        <div>
+                            <h2>Анкеты бронирования посетителей</h2>
+                            <p class="muted-text">Рассматривайте заявки, одобряйте или отменяйте их. Цены пересчитаны со скидками.</p>
+                        </div>
+                        <!-- Кнопка очистки всех броней для удобства тестов -->
+                        <button class="btn btn-outline btn-sm text-red" onclick="resetBookingsToDefault()">Сбросить к дефолту</button>
+                    </div>
+
+                    <!-- Поиск и фильтры -->
+                    <div class="search-filter-row glass-panel mb-4">
+                        <div class="search-col">
+                            <input type="text" id="admin-bookings-search" placeholder="Поиск по имени или телефону..." class="form-input" oninput="applyBookingsFilter()">
+                        </div>
+                        <div class="filter-col">
+                            <select id="admin-bookings-filter-status" class="form-input" onchange="applyBookingsFilter()">
+                                <option value="all">Все статусы</option>
+                                <option value="Новая">🛎️ Новые анкеты</option>
+                                <option value="Подтверждена">✅ Подтвержденные</option>
+                                <option value="Отменена">❌ Отмененные</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Таблица / Список анкет -->
+                    <div class="table-wrapper glass-panel">
+                        <table class="data-table" id="bookings-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Гость / Контакты</th>
+                                    <th>Категория / Номер</th>
+                                    <th>Даты (Суток)</th>
+                                    <th>Состав семьи</th>
+                                    <th>Итоговая цена</th>
+                                    <th>Статус</th>
+                                    <th class="text-right">Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-table-body">
+                                <!-- Генерируется из admin.js -->
+                            </tbody>
+                        </table>
+                        <div class="empty-state text-center py-5" id="bookings-empty-state" style="display: none;">
+                            <p class="muted-text">Анкеты по вашему запросу не найдены.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ВКЛАДКА 3: НОМЕРА ПАНСИОНАТА (ROOMS) -->
+                <div class="admin-tab-content" id="admin-tab-rooms" style="display: none;">
+                    <div class="tab-header flex-row justify-between align-center">
+                        <div>
+                            <h2>Управление номерным фондом</h2>
+                            <p class="muted-text">Здесь вы можете изменить статус занятости каждого номера, отредактировать цену или добавить новый.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddRoomModal()">+ Добавить номер</button>
+                    </div>
+
+                    <!-- Сетка номеров для админа -->
+                    <div class="admin-rooms-grid" id="admin-rooms-grid">
+                        <!-- Наполняется из admin.js -->
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Подвал (Footer) -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo-area">
+                    <img src="images/logo.png" alt="QUADRUM Logo" style="height: 48px; border-radius: 4px; object-fit: contain; margin-right: 12px;">
+                    <span class="logo-title" style="color: #FFFFFF;">QUADRUM ALAKOL</span>
+                </div>
+                <p class="text-sm muted-text mt-3">Семейная зона отдыха премиум-класса на берегу бирюзового Алаколя в Акши. Комфорт, забота и премиум-качество по лучшей цене.</p>
+                <div class="footer-social-row mt-3" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/quadrum_alakol/" target="_blank" class="btn btn-secondary btn-sm" style="background-color: rgba(255,255,255,0.08); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); padding: 8px 12px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: #E1306C; margin-right: 6px;">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                        Instagram
+                    </a>
+                    <a href="https://wa.me/77762666692" target="_blank" class="btn btn-secondary btn-sm" style="background-color: rgba(255,255,255,0.08); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.15); padding: 8px 12px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px; color: #25D366; margin-right: 6px;">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#hero-section">Главная</a></li>
+                    <li><a href="#services-section">Услуги</a></li>
+                    <li><a href="#rooms-section">Галерея номеров</a></li>
+                    <li><a href="#contacts-section">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-rules">
+                <h4>Правила пребывания</h4>
+                <p class="text-sm muted-text">Заезд: с 12:00. Выезд: до 10:00. <br>В номерах категорически запрещено курение и распитие спиртных напитков. Благодарим за понимание!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container flex-row justify-between text-sm muted-text">
+                <span>&copy; 2026 Зона отдыха «QUADRUM ALAKOL». Все права защищены.</span>
+                <span>Разработано в рамках практики</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= МОДАЛЬНЫЕ ОКНА (MODALS) ================= -->
+
+    <!-- Модальное окно 1: Оформление бронирования (Анкета гостя) -->
+    <div class="modal-backdrop" id="booking-modal" style="display: none;">
+        <div class="modal-card glass-panel animate-zoom">
+            <button class="modal-close-btn" onclick="closeBookingModal()">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag">Оформление анкеты</span>
+                <h2 id="modal-room-title">3-х местный номер</h2>
+                <p class="muted-text text-sm">3-разовое питание включено. До 4 лет бесплатно, с 5 до 11 лет скидка 35%.</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-grid">
+                    
+                    <!-- Правая колонка: Калькулятор проживания (для наглядности ставим ее первой/верхней) -->
+                    <div class="price-calculator-box">
+                        <h3>📊 Расчет цены в реальном времени</h3>
+                        
+                        <div class="calculator-inputs">
+                            <div class="input-row-half">
+                                <div class="form-group">
+                                    <label for="calc-checkin">Дата заезда:</label>
+                                    <input type="date" id="calc-checkin" class="form-input" onchange="recalculatePrice()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="calc-checkout">Дата выезда:</label>
+                                    <input type="date" id="calc-checkout" class="form-input" onchange="recalculatePrice()">
+                                </div>
+                            </div>
+
+                            <div class="input-row-three">
+                                <div class="form-group">
+                                    <label for="calc-adults">Взрослых:</label>
+                                    <select id="calc-adults" class="form-input" onchange="recalculatePrice()">
+                                        <option value="1">1 взр.</option>
+                                        <option value="2" selected>2 взр.</option>
+                                        <option value="3">3 взр.</option>
+                                        <option value="4">4 взр.</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="calc-kids-5-11">Детей (5-11 лет) <span class="discount-label">-35%</span>:</label>
+                                    <select id="calc-kids-5-11" class="form-input" onchange="recalculatePrice()">
+                                        <option value="0" selected>0 дет.</option>
+                                        <option value="1">1 реб.</option>
+                                        <option value="2">2 реб.</option>
+                                        <option value="3">3 реб.</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="calc-kids-under-4">Детей (до 4 лет) <span class="free-label">Беспл.</span>:</label>
+                                    <select id="calc-kids-under-4" class="form-input" onchange="recalculatePrice()">
+                                        <option value="0" selected>0 дет.</option>
+                                        <option value="1">1 реб.</option>
+                                        <option value="2">2 реб.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Детализированный отчет стоимости -->
+                        <div class="calculator-results" id="calculator-results">
+                            <div class="nights-count muted-text" id="calc-nights-count">Выберите даты для расчёта</div>
+                            <div class="breakdown-details" id="calc-breakdown-details">
+                                <!-- Посуточная детализация -->
+                            </div>
+                            <div class="total-price-row mt-3">
+                                <span>Итого к оплате:</span>
+                                <span class="total-price" id="calc-total-price">0 ₸</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Левая колонка: Форма анкеты гостя -->
+                    <div class="guest-details-box">
+                        <h3>📝 Личные данные гостя</h3>
+                        <form id="booking-submit-form" onsubmit="submitBookingForm(event)">
+                            <div class="form-group">
+                                <label for="guest-name">ФИО гостя (полностью):</label>
+                                <input type="text" id="guest-name" class="form-input" placeholder="Иванов Иван Иванович" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guest-phone">Номер телефона (для подтверждения):</label>
+                                <input type="tel" id="guest-phone" class="form-input" placeholder="+7 (707) 123-4567" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="guest-wishes">Особые пожелания к заселению:</label>
+                                <textarea id="guest-wishes" class="form-input" rows="3" placeholder="Например: тихий этаж, детская кроватка, встреча на вокзале..."></textarea>
+                            </div>
+
+                            <!-- Согласие с правилами -->
+                            <div class="rules-agreement-box">
+                                <input type="checkbox" id="rules-agree" required>
+                                <label for="rules-agree" class="text-sm">
+                                    Я ознакомлен и согласен с <strong class="text-red">правилами зоны отдыха</strong> (запрет на курение и алкоголь в номерах).
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large btn-block mt-4">Отправить анкету на подтверждение</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 2: Добавление нового номера администратором -->
+    <div class="modal-backdrop" id="add-room-modal" style="display: none;">
+        <div class="modal-card glass-panel animate-zoom modal-sm">
+            <button class="modal-close-btn" onclick="closeAddRoomModal()">&times;</button>
+            <div class="modal-header">
+                <h2>Добавление номера в фонд</h2>
+                <p class="muted-text text-sm">Внесите характеристики нового номера в базу данных.</p>
+            </div>
+            <div class="modal-body">
+                <form id="add-room-form" onsubmit="submitAddRoomForm(event)">
+                    <div class="form-group">
+                        <label for="add-room-number">Номер комнаты (например, 104):</label>
+                        <input type="text" id="add-room-number" class="form-input" placeholder="Введите номер комнаты..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="add-room-category">Категория (вместимость):</label>
+                        <select id="add-room-category" class="form-input" onchange="adjustAddRoomDefaultPrices()" required>
+                            <option value="2-х местный номер">2-х местный номер</option>
+                            <option value="3-х местный номер">3-х местный номер</option>
+                            <option value="4-х местный номер">4-х местный номер</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row-half">
+                        <div class="form-group">
+                            <label for="add-room-price-low">Цена в низкий сезон (₸):</label>
+                            <input type="number" id="add-room-price-low" class="form-input" value="40000" min="1000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-room-price-high">Цена в высокий сезон (₸):</label>
+                            <input type="number" id="add-room-price-high" class="form-input" value="60000" min="1000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="add-room-description">Краткое описание:</label>
+                        <textarea id="add-room-description" class="form-input" rows="3" placeholder="Опишите преимущества или особенности номера..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Удобства (отметьте доступные):</label>
+                        <div class="features-checkboxes-grid">
+                            <label><input type="checkbox" name="add-room-feature" value="Двуспальная кровать (180х200)" checked> Двуспальная кровать</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Односпальная кровать (90х200)"> Односпальная кровать</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Собственный душ и туалет" checked> Душ и туалет</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Кондиционер" checked> Кондиционер</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Телевизор" checked> Телевизор</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Холодильник" checked> Холодильник</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Гардеробный шкаф" checked> Гардероб</label>
+                            <label><input type="checkbox" name="add-room-feature" value="Набор полотенцев" checked> Полотенца</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="add-room-status">Начальный статус:</label>
+                        <select id="add-room-status" class="form-input">
+                            <option value="Свободен">Свободен</option>
+                            <option value="Занят">Занят</option>
+                            <option value="На обслуживании">На обслуживании</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-block mt-4">Добавить номер в систему</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Всплывающие Тост-уведомления -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ================= ПОДКЛЮЧЕНИЕ СКРИПТОВ ================= -->
+    <script src="db.js"></script>
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
